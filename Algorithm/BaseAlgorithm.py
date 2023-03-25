@@ -13,6 +13,7 @@ class BaseAlgorithm(ABC):
         try:
             self.req_number = len(self.request_list)
         except Exception as ex:
+            print(ex)
             self.req_number = 0
 
         self.serviced_req = 0
