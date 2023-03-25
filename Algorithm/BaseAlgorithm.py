@@ -17,7 +17,6 @@ class BaseAlgorithm(ABC):
             self.req_number = 0
 
         self.serviced_req = 0
-        self.action_list = list()
         self.time = 0
 
     @abstractmethod
