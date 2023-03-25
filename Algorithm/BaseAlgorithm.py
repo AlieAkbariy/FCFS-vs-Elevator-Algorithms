@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class BaseAlgorithm(ABC):
-    def __int__(self, rotation_latency, transfer_time, seek_time, starting_position, request_list):
+    def __init__(self, rotation_latency, transfer_time, seek_time, starting_position, request_list):
         self.rotation_latency = rotation_latency
         self.transfer_time = transfer_time
         self.seek_time = seek_time
@@ -10,7 +10,11 @@ class BaseAlgorithm(ABC):
         self.request_list = request_list
 
         self.result = list()
-        self.req_number = len(self.request_list)
+        try:
+            self.req_number = len(self.request_list)
+        except Exception as ex:
+            self.req_number = 0
+
         self.serviced_req = 0
         self.action_list = list()
         self.time = 0
