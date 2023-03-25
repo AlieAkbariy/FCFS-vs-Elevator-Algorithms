@@ -5,6 +5,7 @@ class FirstComeFirstServiced(BaseAlgorithm):
 
     def __init__(self, rotation_latency, transfer_time, seek_time, starting_position, request_list):
         super().__init__(rotation_latency, transfer_time, seek_time, starting_position, request_list)
+        self.action_list = list()
 
     def add_action(self):
         for i in range(len(self.request_list)):
