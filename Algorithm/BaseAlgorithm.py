@@ -28,7 +28,6 @@ class BaseAlgorithm(ABC):
         pass
 
     def __print(self):
-        print('\nResult:\n')
         for r in self.result:
             print(r)
 

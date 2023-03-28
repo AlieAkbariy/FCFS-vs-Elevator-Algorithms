@@ -1,4 +1,4 @@
-from BaseAlgorithm import BaseAlgorithm
+from Algorithm.BaseAlgorithm import BaseAlgorithm
 
 
 class Elevator(BaseAlgorithm):
@@ -63,7 +63,6 @@ class Elevator(BaseAlgorithm):
         self.starting_position = action[0]
         self.result.append([action[0], self.time])
         self.serviced_req += 1
-
 
 # Test Algorithm
 # a = Elevator(4.17, 0.13, 4000.0, 8000, [[8000, 0],

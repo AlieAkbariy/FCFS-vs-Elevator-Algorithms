@@ -1,4 +1,4 @@
-from BaseAlgorithm import BaseAlgorithm
+from Algorithm.BaseAlgorithm import BaseAlgorithm
 
 
 class FirstComeFirstServiced(BaseAlgorithm):
