@@ -7,6 +7,7 @@ class BaseAlgorithm(ABC):
         self.transfer_time = transfer_time
         self.seek_time = seek_time
         self.starting_position = starting_position
+        request_list.sort(key=lambda x: x[1])
         self.request_list = request_list
 
         self.result = list()
