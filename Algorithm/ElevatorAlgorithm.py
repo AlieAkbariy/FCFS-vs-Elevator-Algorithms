@@ -23,7 +23,10 @@ class Elevator(BaseAlgorithm):
 
         for i in range(num):
             if self.time < self.request_list[0][1]:
-                return
+                if len(self.action_list_up) == 0 and len(self.action_list_down) == 0:
+                    self.time = self.request_list[0][1]
+                else:
+                    return
 
             if self.request_list[0][0] >= self.starting_position:
                 self.action_list_up.append(self.request_list.pop(0))

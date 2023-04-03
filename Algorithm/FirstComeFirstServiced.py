@@ -10,7 +10,10 @@ class FirstComeFirstServiced(BaseAlgorithm):
     def add_action(self):
         for i in range(len(self.request_list)):
             if self.time < self.request_list[0][1]:
-                return
+                if len(self.action_list) == 0:
+                    self.time = self.request_list[0][1]
+                else:
+                    return
 
             self.action_list.append(self.request_list.pop(0))
 
