@@ -4,8 +4,8 @@ from GenerateDataset import Dataset
 
 
 class Analysis:
-    @staticmethod
-    def start(dataset_path, starting_position):
+
+    def start(self, dataset_path, starting_position):
         requests_list = Dataset.read_dataset(dataset_path)
 
         for request_list in requests_list:
