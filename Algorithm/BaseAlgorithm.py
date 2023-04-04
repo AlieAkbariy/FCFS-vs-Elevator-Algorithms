@@ -11,6 +11,9 @@ class BaseAlgorithm(ABC):
         self.request_list = request_list
 
         self.result = list()
+        self.head_changing = 0
+        self.direction_change = 0
+
         try:
             self.req_number = len(self.request_list)
         except Exception as ex:
@@ -29,8 +32,13 @@ class BaseAlgorithm(ABC):
         pass
 
     def __print(self):
+        print('Result:')
         for r in self.result:
             print(r)
+
+        print('= = = = = = = =')
+        print(f'Head Changing: {self.head_changing}')
+        print(f'Direction Change: {self.direction_change}')
 
     def start(self):
         while self.serviced_req != self.req_number:
