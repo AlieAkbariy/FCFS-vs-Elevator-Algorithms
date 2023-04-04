@@ -30,31 +30,31 @@ class Dataset:
 
         dataset.save(self.dataset_path)
 
+    @staticmethod
+    def read_dataset(dataset_path):
+        all_requests = list()
+        dataset = load_workbook(dataset_path)
 
-def read_dataset(dataset_path):
-    all_requests = list()
-    dataset = load_workbook(dataset_path)
+        test_case = int(dataset['Sheet']['A1'].value)
+        request_num_per_test_case = int(dataset['Sheet']['A2'].value)
 
-    test_case = int(dataset['Sheet']['A1'].value)
-    request_num_per_test_case = int(dataset['Sheet']['A2'].value)
+        for i in range(test_case):
+            sheet_name = 'test_case' + str(i + 1)
+            sheet = dataset[sheet_name]
+            requests = list()
 
-    for i in range(test_case):
-        sheet_name = 'test_case' + str(i + 1)
-        sheet = dataset[sheet_name]
-        requests = list()
+            for j in range(request_num_per_test_case):
+                request = list()
 
-        for j in range(request_num_per_test_case):
-            request = list()
+                disk_index = 'A' + str(j + 1)
+                time_index = 'B' + str(j + 1)
 
-            disk_index = 'A' + str(j + 1)
-            time_index = 'B' + str(j + 1)
+                disk_position = sheet[disk_index].value
+                time = sheet[time_index].value
 
-            disk_position = sheet[disk_index].value
-            time = sheet[time_index].value
+                request.append(float(disk_position))
+                request.append(float(time))
+                requests.append(request)
+            all_requests.append(requests)
 
-            request.append(float(disk_position))
-            request.append(float(time))
-            requests.append(request)
-        all_requests.append(requests)
-
-    return all_requests
+        return all_requests

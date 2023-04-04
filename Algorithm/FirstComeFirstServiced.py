@@ -59,11 +59,11 @@ class FirstComeFirstServiced(BaseAlgorithm):
 
 
 # Test Algorithm
-a = FirstComeFirstServiced(4.17, 0.13, 4000.0, 8000, [[8000, 0],
-                                                      [24000, 0],
-                                                      [56000, 0],
-                                                      [16000, 10],
-                                                      [64000, 20],
-                                                      [40000, 30],
-                                                      [50000, 90]])
-a.start()
+# a = FirstComeFirstServiced(4.17, 0.13, 4000.0, 8000, [[8000, 0],
+#                                                       [24000, 0],
+#                                                       [56000, 0],
+#                                                       [16000, 10],
+#                                                       [64000, 20],
+#                                                       [40000, 30],
+#                                                       [50000, 90]])
+# a.start()
