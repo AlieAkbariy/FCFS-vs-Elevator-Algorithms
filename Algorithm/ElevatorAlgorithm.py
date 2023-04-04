@@ -5,6 +5,7 @@ class Elevator(BaseAlgorithm):
 
     def __init__(self, rotation_latency, transfer_time, seek_time, starting_position, request_list):
         super().__init__(rotation_latency, transfer_time, seek_time, starting_position, request_list)
+
         self.action_list_up = list()
         self.action_list_down = list()
         self.direction = 0
@@ -43,14 +44,22 @@ class Elevator(BaseAlgorithm):
                     self.__action_in(self.action_list_up)
                 elif len(self.action_list_down) != 0:
                     self.direction = -1
+                    self.direction_change += 1
+
                     self.__action_in(self.action_list_down)
+
 
             else:
                 if len(self.action_list_down) != 0:
                     self.__action_in(self.action_list_down)
                 elif len(self.action_list_up) != 0:
                     self.direction = 1
+                    self.direction_change += 1
+
                     self.__action_in(self.action_list_up)
+
+
+
         except Exception as ex:
             print(ex)
 
@@ -58,20 +67,26 @@ class Elevator(BaseAlgorithm):
         action = action_list.pop(0)
         reading_delay = self.rotation_latency + self.transfer_time
         start_stop_overhead = 1
+
         if action[0] - self.starting_position == 0:
             self.time += reading_delay
         else:
-            self.time += (abs(action[0] - self.starting_position) / self.seek_time)
+            head_change = abs(action[0] - self.starting_position)
+            self.time += (head_change / self.seek_time)
             self.time += reading_delay + start_stop_overhead
+
+            self.head_changing += head_change
+
         self.starting_position = action[0]
         self.result.append([action[0], self.time])
         self.serviced_req += 1
 
 # Test Algorithm
-# a = Elevator(4.17, 0.13, 4000.0, 8000, [[8000, 0],
-#                                         [24000, 0],
-#                                         [56000, 0],
-#                                         [16000, 10],
-#                                         [64000, 20],
-#                                         [40000, 30]])
-# a.start()
+a = Elevator(4.17, 0.13, 4000.0, 8000, [[8000, 0],
+                                        [24000, 0],
+                                        [56000, 0],
+                                        [16000, 10],
+                                        [64000, 20],
+                                        [40000, 30],
+                                        [50000, 50]])
+a.start()
