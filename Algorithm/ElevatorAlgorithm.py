@@ -78,7 +78,7 @@ class Elevator(BaseAlgorithm):
             self.head_changing += head_change
 
         self.starting_position = action[0]
-        self.result.append([action[0], self.time])
+        self.result.append([action[0], action[1], self.time])
         self.serviced_req += 1
 
 # Test Algorithm

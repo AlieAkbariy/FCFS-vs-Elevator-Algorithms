@@ -51,12 +51,11 @@ class FirstComeFirstServiced(BaseAlgorithm):
                     self.head_changing += head_change
 
                 self.starting_position = action[0]
-                self.result.append([action[0], self.time])
+                self.result.append([action[0], action[1], self.time])
                 self.serviced_req += 1
 
         except Exception as ex:
             print(ex)
-
 
 # Test Algorithm
 # a = FirstComeFirstServiced(4.17, 0.13, 4000.0, 8000, [[8000, 0],
