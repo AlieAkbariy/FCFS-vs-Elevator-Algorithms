@@ -46,15 +46,15 @@ class Analysis:
             fcfs_head_change.append(fcfs.head_changing)
             fcfs_starvation.append(self.__calc_starvation(fcfs.result))
 
-        self.elevator_elements = {'elevator_time': elevator_time,
-                                  'elevator_change_direction': elevator_change_direction,
-                                  'elevator_head_change': elevator_head_change,
-                                  'elevator_starvation': elevator_starvation}
+        self.elevator_elements = {'time': elevator_time,
+                                  'change_direction': elevator_change_direction,
+                                  'head_change': elevator_head_change,
+                                  'starvation': elevator_starvation}
 
-        self.fcfs_elements = {'fcfs_time': fcfs_time,
-                              'fcfs_change_direction': fcfs_change_direction,
-                              'fcfs_head_change': fcfs_head_change,
-                              'fcfs_starvation': fcfs_starvation}
+        self.fcfs_elements = {'time': fcfs_time,
+                              'change_direction': fcfs_change_direction,
+                              'head_change': fcfs_head_change,
+                              'starvation': fcfs_starvation}
 
         self.elements['elevator'] = self.elevator_elements
         self.elements['fcfs'] = self.fcfs_elements
