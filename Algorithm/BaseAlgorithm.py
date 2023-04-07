@@ -1,5 +1,11 @@
 from abc import ABC, abstractmethod
 
+import tableprint as tableprint
+
+
+def print_table(result):
+    tableprint.table(result, ['Cylinder Of Request', 'First Time available', 'Time Completed'])
+
 
 class BaseAlgorithm(ABC):
     def __init__(self, rotation_latency, transfer_time, seek_time, starting_position, request_list):
@@ -32,13 +38,12 @@ class BaseAlgorithm(ABC):
         pass
 
     def __print(self):
+        print('⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜⁜')
         print('Result:')
-        for r in self.result:
-            print(r)
+        print_table(self.result)
 
-        print('= = = = = = = =')
-        print(f'Head Changing: {self.head_changing}')
-        print(f'Direction Change: {self.direction_change}')
+        print(f'-- Head Changing: {self.head_changing}')
+        print(f'-- Direction Change: {self.direction_change}')
 
     def start(self):
         while self.serviced_req != self.req_number:

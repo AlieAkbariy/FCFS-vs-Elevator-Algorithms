@@ -9,10 +9,11 @@ if __name__ == '__main__':
     #     print(i)
 
     path = '../dataset.xlsx'
-    # dataset = Dataset(path, 100, 5)
-    # dataset.generate()
+    dataset = Dataset(path, 100, 5)
+    dataset.generate()
     rotation_latency, transfer_time, seek_time, starting_position = 4.17, 0.13, 4000.0, 8000
 
     output = Output(path, starting_position, rotation_latency, transfer_time, seek_time)
 
     output.plot_full_data()
+    output.plot_compare_data()
