@@ -1,6 +1,7 @@
 from ProjectPart2.GenerateDataset import Dataset
 from ProjectPart2.Output import Output
 from ProjectPart2.FullDatasetGenerator import FullDatasetGenerator
+from ProjectPart2.CompareOutputs import CompareOutputs
 
 if __name__ == '__main__':
     pass
@@ -13,11 +14,17 @@ if __name__ == '__main__':
     # path = '../dataset.xlsx'
     # dataset = Dataset(path, 100, 5)
     # dataset.generate()
+
     # rotation_latency, transfer_time, seek_time, starting_position = 4.17, 0.13, 4000.0, 8000
-    # path = "../Dataset-1/dataset-1.xlsx"
+    # path = "../Datasets/Dataset-11/dataset.xlsx"
     # output = Output(path, starting_position, rotation_latency, transfer_time, seek_time)
     # output.plot_full_data()
     # output.plot_compare_data()
+
+    rotation_latency, transfer_time, seek_time, starting_position = 4.17, 0.13, 4000.0, 8000
+    path = "../Datasets/Dataset-"
+    comparing_datas_id = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    CompareOutputs(path, comparing_datas_id, rotation_latency, transfer_time, seek_time, starting_position).start()
 
     # Make Dataset
     #

@@ -10,13 +10,15 @@ class Analysis:
         self.transfer_time = transfer_time
         self.seek_time = seek_time
 
+        self.requests_lists = None
+
         self.elements = dict()
 
         self.elevator_elements = dict()
         self.fcfs_elements = dict()
 
     def start(self, dataset_path, starting_position):
-        requests_list = Dataset.read_dataset(dataset_path)
+        self.requests_lists = Dataset.read_dataset(dataset_path)
 
         elevator_time = []
         elevator_change_direction = []
@@ -28,7 +30,7 @@ class Analysis:
         fcfs_head_change = []
         fcfs_starvation = []
 
-        for request_list in requests_list:
+        for request_list in self.requests_lists:
             elevator = Elevator(self.rotation_latency, self.transfer_time, self.seek_time, starting_position,
                                 request_list.copy())
             fcfs = FirstComeFirstServiced(self.rotation_latency, self.transfer_time, self.seek_time, starting_position,
