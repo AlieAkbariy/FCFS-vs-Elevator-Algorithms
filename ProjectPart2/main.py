@@ -14,9 +14,8 @@ if __name__ == '__main__':
     # dataset = Dataset(path, 100, 5)
     # dataset.generate()
     # rotation_latency, transfer_time, seek_time, starting_position = 4.17, 0.13, 4000.0, 8000
-    #
+    # path = "../Dataset-1/dataset-1.xlsx"
     # output = Output(path, starting_position, rotation_latency, transfer_time, seek_time)
-    #
     # output.plot_full_data()
     # output.plot_compare_data()
 
@@ -38,4 +37,41 @@ if __name__ == '__main__':
     # FullDatasetGenerator(dir_name, 100, 30).start()
     #
     # dir_name = 'Dataset-6'
+    # FullDatasetGenerator(dir_name, 100, 35).start()
+    #
+    # dir_name = 'Dataset-7'
+    # FullDatasetGenerator(dir_name, 100, 40).start()
+    #
+    # dir_name = 'Dataset-8'
+    # FullDatasetGenerator(dir_name, 100, 45).start()
+    #
+    # dir_name = 'Dataset-9'
+    # FullDatasetGenerator(dir_name, 100, 50).start()
+    #
+    # #
+    # dir_name = 'Dataset-11'
+    # FullDatasetGenerator(dir_name, 500, 10).start()
+    #
+    # dir_name = 'Dataset-12'
+    # FullDatasetGenerator(dir_name, 500, 15).start()
+    #
+    # dir_name = 'Dataset-13'
+    # FullDatasetGenerator(dir_name, 500, 20).start()
+    #
+    # dir_name = 'Dataset-14'
     # FullDatasetGenerator(dir_name, 500, 25).start()
+    #
+    # dir_name = 'Dataset-15'
+    # FullDatasetGenerator(dir_name, 500, 30).start()
+    #
+    # dir_name = 'Dataset-16'
+    # FullDatasetGenerator(dir_name, 500, 35).start()
+    #
+    # dir_name = 'Dataset-17'
+    # FullDatasetGenerator(dir_name, 500, 40).start()
+    #
+    # dir_name = 'Dataset-18'
+    # FullDatasetGenerator(dir_name, 500, 45).start()
+    #
+    # dir_name = 'Dataset-19'
+    # FullDatasetGenerator(dir_name, 500, 50).start()

@@ -8,7 +8,7 @@ class FullDatasetGenerator:
         self.request_num = request_num
 
     def start(self):
-        path = f'../{self.dir_name}/'
+        path = f'../Datasets/{self.dir_name}/'
 
         file = open(path + "README.txt", "w")
         file.write("oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" +
@@ -16,6 +16,5 @@ class FullDatasetGenerator:
                    f"Number Of Requests: {self.request_num}\n" +
                    "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo")
 
-        for i in range(self.number_of_datasets):
-            dataset = Dataset(path + f'dataset-{i}.xlsx', self.number_of_datasets, self.request_num)
-            dataset.generate()
+        dataset = Dataset(path + f'dataset.xlsx', self.number_of_datasets, self.request_num)
+        dataset.generate()
