@@ -15,6 +15,8 @@ class App:
             self.comparing_datas_id.append(dataset_id)
             dataset_id += 1
 
+        self.start()
+
     def change_default_value(self):
         print("Hi let's change rotation latency, transfer time, seek time and starting position :)")
         self.rotation_latency = float(input("Rotation Latency: "))
